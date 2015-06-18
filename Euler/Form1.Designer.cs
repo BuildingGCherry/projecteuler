@@ -33,6 +33,7 @@
             this.grpQuestions = new System.Windows.Forms.GroupBox();
             this.grpAnswers = new System.Windows.Forms.GroupBox();
             this.lblQuestions = new System.Windows.Forms.Label();
+            this.btnQ2 = new System.Windows.Forms.Button();
             this.grpQuestions.SuspendLayout();
             this.grpAnswers.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             // grpQuestions
             // 
+            this.grpQuestions.Controls.Add(this.btnQ2);
             this.grpQuestions.Controls.Add(this.btnQ1);
             this.grpQuestions.Location = new System.Drawing.Point(12, 12);
             this.grpQuestions.Name = "grpQuestions";
@@ -84,6 +86,16 @@
             this.lblQuestions.Size = new System.Drawing.Size(819, 94);
             this.lblQuestions.TabIndex = 2;
             // 
+            // btnQ2
+            // 
+            this.btnQ2.Location = new System.Drawing.Point(96, 37);
+            this.btnQ2.Name = "btnQ2";
+            this.btnQ2.Size = new System.Drawing.Size(75, 31);
+            this.btnQ2.TabIndex = 1;
+            this.btnQ2.Text = "Q2";
+            this.btnQ2.UseVisualStyleBackColor = true;
+            this.btnQ2.Click += new System.EventHandler(this.btnQ2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.GroupBox grpQuestions;
         private System.Windows.Forms.GroupBox grpAnswers;
         private System.Windows.Forms.Label lblQuestions;
+        private System.Windows.Forms.Button btnQ2;
     }
 }
 
