@@ -77,17 +77,30 @@ namespace Euler
         private void btnQ3_Click(object sender, EventArgs e)
         {
             long maxNumber = 600851475143;
-            bool isLargest = false;
+            long newNum = maxNumber;
+            long largestFactor = 0;
+            long count = 2;
 
-            while (isLargest == false)
+            while (count * count <= newNum)
             {
-                if (_eulerHelper.IsPrimeNumber(maxNumber))
+                if (newNum % count == 0)
                 {
-                    long maxPrime = maxNumber;
-                    lblAnswers.Text = maxPrime.ToString();
-                    isLargest = true;
+                    newNum = newNum / count;
+                    largestFactor = count;
                 }
-                maxNumber--;
+                else
+                {
+                    count++;
+                }
+            }
+            if (newNum > largestFactor)
+            { // the remainder is a prime number
+                largestFactor = newNum;
+                if (_eulerHelper.IsPrimeNumber(largestFactor))
+                {
+                    lblAnswers.Text = largestFactor.ToString();
+                }
+                
             }
 
             lblQuestions.Text =
