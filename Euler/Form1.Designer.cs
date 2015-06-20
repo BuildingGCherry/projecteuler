@@ -31,18 +31,20 @@
             this.btnQ1 = new System.Windows.Forms.Button();
             this.lblAnswers = new System.Windows.Forms.Label();
             this.grpQuestions = new System.Windows.Forms.GroupBox();
+            this.btnQ2 = new System.Windows.Forms.Button();
             this.grpAnswers = new System.Windows.Forms.GroupBox();
             this.lblQuestions = new System.Windows.Forms.Label();
-            this.btnQ2 = new System.Windows.Forms.Button();
+            this.btnQ3 = new System.Windows.Forms.Button();
             this.grpQuestions.SuspendLayout();
             this.grpAnswers.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnQ1
             // 
-            this.btnQ1.Location = new System.Drawing.Point(15, 37);
+            this.btnQ1.Location = new System.Drawing.Point(10, 24);
+            this.btnQ1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnQ1.Name = "btnQ1";
-            this.btnQ1.Size = new System.Drawing.Size(75, 31);
+            this.btnQ1.Size = new System.Drawing.Size(50, 20);
             this.btnQ1.TabIndex = 0;
             this.btnQ1.Text = "Q1";
             this.btnQ1.UseVisualStyleBackColor = true;
@@ -51,29 +53,46 @@
             // lblAnswers
             // 
             this.lblAnswers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblAnswers.Location = new System.Drawing.Point(15, 159);
+            this.lblAnswers.Location = new System.Drawing.Point(10, 103);
+            this.lblAnswers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnswers.Name = "lblAnswers";
-            this.lblAnswers.Size = new System.Drawing.Size(819, 94);
+            this.lblAnswers.Size = new System.Drawing.Size(546, 61);
             this.lblAnswers.TabIndex = 1;
             // 
             // grpQuestions
             // 
+            this.grpQuestions.Controls.Add(this.btnQ3);
             this.grpQuestions.Controls.Add(this.btnQ2);
             this.grpQuestions.Controls.Add(this.btnQ1);
-            this.grpQuestions.Location = new System.Drawing.Point(12, 12);
+            this.grpQuestions.Location = new System.Drawing.Point(8, 8);
+            this.grpQuestions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpQuestions.Name = "grpQuestions";
-            this.grpQuestions.Size = new System.Drawing.Size(853, 231);
+            this.grpQuestions.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpQuestions.Size = new System.Drawing.Size(569, 150);
             this.grpQuestions.TabIndex = 2;
             this.grpQuestions.TabStop = false;
             this.grpQuestions.Text = "Questions";
+            // 
+            // btnQ2
+            // 
+            this.btnQ2.Location = new System.Drawing.Point(64, 24);
+            this.btnQ2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQ2.Name = "btnQ2";
+            this.btnQ2.Size = new System.Drawing.Size(50, 20);
+            this.btnQ2.TabIndex = 1;
+            this.btnQ2.Text = "Q2";
+            this.btnQ2.UseVisualStyleBackColor = true;
+            this.btnQ2.Click += new System.EventHandler(this.btnQ2_Click);
             // 
             // grpAnswers
             // 
             this.grpAnswers.Controls.Add(this.lblQuestions);
             this.grpAnswers.Controls.Add(this.lblAnswers);
-            this.grpAnswers.Location = new System.Drawing.Point(12, 306);
+            this.grpAnswers.Location = new System.Drawing.Point(8, 199);
+            this.grpAnswers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpAnswers.Name = "grpAnswers";
-            this.grpAnswers.Size = new System.Drawing.Size(853, 359);
+            this.grpAnswers.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAnswers.Size = new System.Drawing.Size(569, 233);
             this.grpAnswers.TabIndex = 3;
             this.grpAnswers.TabStop = false;
             this.grpAnswers.Text = "Answers";
@@ -81,28 +100,31 @@
             // lblQuestions
             // 
             this.lblQuestions.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblQuestions.Location = new System.Drawing.Point(15, 41);
+            this.lblQuestions.Location = new System.Drawing.Point(10, 27);
+            this.lblQuestions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuestions.Name = "lblQuestions";
-            this.lblQuestions.Size = new System.Drawing.Size(819, 94);
+            this.lblQuestions.Size = new System.Drawing.Size(546, 61);
             this.lblQuestions.TabIndex = 2;
             // 
-            // btnQ2
+            // btnQ3
             // 
-            this.btnQ2.Location = new System.Drawing.Point(96, 37);
-            this.btnQ2.Name = "btnQ2";
-            this.btnQ2.Size = new System.Drawing.Size(75, 31);
-            this.btnQ2.TabIndex = 1;
-            this.btnQ2.Text = "Q2";
-            this.btnQ2.UseVisualStyleBackColor = true;
-            this.btnQ2.Click += new System.EventHandler(this.btnQ2_Click);
+            this.btnQ3.Location = new System.Drawing.Point(118, 24);
+            this.btnQ3.Margin = new System.Windows.Forms.Padding(2);
+            this.btnQ3.Name = "btnQ3";
+            this.btnQ3.Size = new System.Drawing.Size(50, 20);
+            this.btnQ3.TabIndex = 2;
+            this.btnQ3.Text = "Q3";
+            this.btnQ3.UseVisualStyleBackColor = true;
+            this.btnQ3.Click += new System.EventHandler(this.btnQ3_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 677);
+            this.ClientSize = new System.Drawing.Size(585, 440);
             this.Controls.Add(this.grpAnswers);
             this.Controls.Add(this.grpQuestions);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.grpQuestions.ResumeLayout(false);
@@ -119,6 +141,7 @@
         private System.Windows.Forms.GroupBox grpAnswers;
         private System.Windows.Forms.Label lblQuestions;
         private System.Windows.Forms.Button btnQ2;
+        private System.Windows.Forms.Button btnQ3;
     }
 }
 

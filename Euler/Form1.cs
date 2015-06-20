@@ -10,6 +10,8 @@ namespace Euler
 {
     public partial class Form1 : Form
     {
+        private readonly EulerHelper _eulerHelper = new EulerHelper();
+
         #region Constructors
 
         public Form1()
@@ -23,10 +25,10 @@ namespace Euler
 
         private void btnQ1_Click(object sender, EventArgs e)
         {
-            var result = 0;
-            var sum = 0;
+            int result = 0;
+            int sum = 0;
 
-            for (var i = 0; i < 1000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 if (i%3 == 0 && i%5 == 0)
                 {
@@ -50,10 +52,10 @@ namespace Euler
 
         private void btnQ2_Click(object sender, EventArgs e)
         {
-            var fibPrevious = 0;
-            var fibCurrent = 1;
-            var fibNext = 0;
-            var totalSum = 0;
+            int fibPrevious = 0;
+            int fibCurrent = 1;
+            int fibNext = 0;
+            int totalSum = 0;
 
             do
             {
@@ -67,8 +69,32 @@ namespace Euler
                 }
             } while (fibNext <= 4000000);
 
-            lblQuestions.Text = "By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.";
+            lblQuestions.Text =
+                "By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.";
             lblAnswers.Text = totalSum.ToString();
+        }
+
+        private void btnQ3_Click(object sender, EventArgs e)
+        {
+            long maxNumber = 600851475143;
+            bool isLargest = false;
+
+            while (isLargest == false)
+            {
+                if (_eulerHelper.IsPrimeNumber(maxNumber))
+                {
+                    long maxPrime = maxNumber;
+                    lblAnswers.Text = maxPrime.ToString();
+                    isLargest = true;
+                }
+                maxNumber--;
+            }
+
+            lblQuestions.Text =
+                "The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143. " +
+                "(A Prime Number can be divided evenly only by 1, or itself. And it must be a whole number greater than 1. " +
+                "Example: 5 can only be divided evenly by 1 or 5, so it is a prime number. But 6 can be divided evenly by 1, 2, 3 and 6 so it is NOT a prime number " +
+                "(it is a composite number)";
         }
 
         #endregion
