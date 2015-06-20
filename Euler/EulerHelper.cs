@@ -13,5 +13,31 @@
             }
             return true;
         }
+
+        public long GetLargestPrimeNumber(long number)
+        {
+            long newNum = number;
+            long largestFactor = 0;
+            long count = 2;
+
+            while (count * count <= newNum)
+            {
+                if (newNum % count == 0)
+                {
+                    newNum = newNum / count;
+                    largestFactor = count;
+                }
+                else
+                {
+                    count = (count == 2) ? 3 : count + 2;
+                }
+            }
+            if (newNum > largestFactor)
+            { // the remainder is a prime number
+                largestFactor = newNum;     
+            }
+
+            return largestFactor;
+        }
     }
 }

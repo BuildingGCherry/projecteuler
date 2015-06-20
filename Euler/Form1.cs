@@ -77,32 +77,9 @@ namespace Euler
         private void btnQ3_Click(object sender, EventArgs e)
         {
             long maxNumber = 600851475143;
-            long newNum = maxNumber;
-            long largestFactor = 0;
-            long count = 2;
 
-            while (count * count <= newNum)
-            {
-                if (newNum % count == 0)
-                {
-                    newNum = newNum / count;
-                    largestFactor = count;
-                }
-                else
-                {
-                    count++;
-                }
-            }
-            if (newNum > largestFactor)
-            { // the remainder is a prime number
-                largestFactor = newNum;
-                if (_eulerHelper.IsPrimeNumber(largestFactor))
-                {
-                    lblAnswers.Text = largestFactor.ToString();
-                }
-                
-            }
-
+            lblAnswers.Text = _eulerHelper.GetLargestPrimeNumber(maxNumber).ToString();
+           
             lblQuestions.Text =
                 "The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143. " +
                 "(A Prime Number can be divided evenly only by 1, or itself. And it must be a whole number greater than 1. " +
