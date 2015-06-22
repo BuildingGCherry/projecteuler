@@ -87,7 +87,7 @@ namespace Euler
         /// </summary>
         /// <param name="maxNumber">Highest number to check</param>
         /// <returns></returns>
-        public int[] ESievePrimeNumbers(int maxNumber)
+        public List<Int64> ESievePrimeNumbers(int maxNumber)
         {
 
             int sieveBound = (int)(maxNumber - 1) / 2;
@@ -112,7 +112,7 @@ namespace Euler
 
             /// Google helped me figure out this part https://en.wikipedia.org/wiki/Logarithm the Math.Log confused me
             /// Here we are converting our bitarray into a list of integers that we can actually use
-            List<int> numbers = new List<int>((int)(maxNumber / (Math.Log(maxNumber) - 1.08366)));
+            List<Int64> numbers = new List<Int64>((int)(maxNumber / (Math.Log(maxNumber) - 1.08366)));
 
             /// Add "2" because we skipped it earlier
             numbers.Add(2);
@@ -126,7 +126,7 @@ namespace Euler
                 }
             }
 
-            return numbers.ToArray();
+            return numbers.ToList();
         }   
         #endregion
     }

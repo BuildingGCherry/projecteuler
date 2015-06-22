@@ -171,16 +171,9 @@ namespace Euler
             //lblAnswers.Text = results.Select(x => x).Sum().ToString();
 
 
-            int[] primeNumbers = _eulerHelper.ESievePrimeNumbers(maxNumber);
+            IEnumerable<Int64> primeNumbers = _eulerHelper.ESievePrimeNumbers(maxNumber);
+            lblAnswers.Text = primeNumbers.Select(x => x).Sum().ToString();
 
-            decimal primeSum = 0;
-
-            for (int i = 0; i < primeNumbers.Length; i++)
-            {
-                primeSum += primeNumbers[i];
-            }
-
-            lblAnswers.Text = primeSum.ToString();
         }
     }
 }
