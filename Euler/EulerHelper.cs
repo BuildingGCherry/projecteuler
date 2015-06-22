@@ -82,7 +82,7 @@ namespace Euler
         }
 
         /// <summary>
-        /// Using the algorithm from https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes get all prime numbers
+        /// Using the algorithm from Sieve of Eratosthenes to get all prime numbers
         /// below the number passed in
         /// </summary>
         /// <param name="maxNumber">Highest number to check</param>
@@ -95,10 +95,14 @@ namespace Euler
 
             BitArray PrimeBits = new BitArray(sieveBound + 1, true);
 
+            /// Implementing Eratosthenes https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes 
             for (int i = 1; i <= upperSqrt; i++)
             {
                 if (PrimeBits.Get(i))
                 {
+                    /// Using the Eratosthenes pattern to skip and eliminate numbers as needed.
+                    /// Also skipping the even numbers since they will generally not be prime
+                    /// (The j += 2 * i + 1 ensures we are incrementing by an odd number each time)
                     for (int j = i * 2 * (i + 1); j <= sieveBound; j += 2 * i + 1)
                     {
                         PrimeBits.Set(j, false);
@@ -106,8 +110,14 @@ namespace Euler
                 }
             }
 
+            /// Google helped me figure out this part https://en.wikipedia.org/wiki/Logarithm the Math.Log confused me
+            /// Here we are converting our bitarray into a list of integers that we can actually use
             List<int> numbers = new List<int>((int)(maxNumber / (Math.Log(maxNumber) - 1.08366)));
+
+            /// Add "2" because we skipped it earlier
             numbers.Add(2);
+
+            /// Getting the values from our formula and adding to our list
             for (int i = 1; i <= sieveBound; i++)
             {
                 if (PrimeBits.Get(i))
