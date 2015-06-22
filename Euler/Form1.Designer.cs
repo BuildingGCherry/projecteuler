@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.btnQ1 = new System.Windows.Forms.Button();
-            this.lblAnswers = new System.Windows.Forms.Label();
             this.grpQuestions = new System.Windows.Forms.GroupBox();
             this.btnQ3 = new System.Windows.Forms.Button();
             this.btnQ2 = new System.Windows.Forms.Button();
             this.grpAnswers = new System.Windows.Forms.GroupBox();
             this.lblQuestions = new System.Windows.Forms.Label();
             this.btnQ4 = new System.Windows.Forms.Button();
+            this.btnQ10 = new System.Windows.Forms.Button();
+            this.lblAnswers = new System.Windows.Forms.TextBox();
             this.grpQuestions.SuspendLayout();
             this.grpAnswers.SuspendLayout();
             this.SuspendLayout();
@@ -50,16 +51,9 @@
             this.btnQ1.UseVisualStyleBackColor = true;
             this.btnQ1.Click += new System.EventHandler(this.btnQ1_Click);
             // 
-            // lblAnswers
-            // 
-            this.lblAnswers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblAnswers.Location = new System.Drawing.Point(15, 158);
-            this.lblAnswers.Name = "lblAnswers";
-            this.lblAnswers.Size = new System.Drawing.Size(819, 94);
-            this.lblAnswers.TabIndex = 1;
-            // 
             // grpQuestions
             // 
+            this.grpQuestions.Controls.Add(this.btnQ10);
             this.grpQuestions.Controls.Add(this.btnQ4);
             this.grpQuestions.Controls.Add(this.btnQ3);
             this.grpQuestions.Controls.Add(this.btnQ2);
@@ -93,8 +87,8 @@
             // 
             // grpAnswers
             // 
-            this.grpAnswers.Controls.Add(this.lblQuestions);
             this.grpAnswers.Controls.Add(this.lblAnswers);
+            this.grpAnswers.Controls.Add(this.lblQuestions);
             this.grpAnswers.Location = new System.Drawing.Point(12, 306);
             this.grpAnswers.Name = "grpAnswers";
             this.grpAnswers.Size = new System.Drawing.Size(854, 358);
@@ -120,6 +114,25 @@
             this.btnQ4.UseVisualStyleBackColor = true;
             this.btnQ4.Click += new System.EventHandler(this.btnQ4_Click);
             // 
+            // btnQ10
+            // 
+            this.btnQ10.Location = new System.Drawing.Point(339, 37);
+            this.btnQ10.Name = "btnQ10";
+            this.btnQ10.Size = new System.Drawing.Size(75, 31);
+            this.btnQ10.TabIndex = 4;
+            this.btnQ10.Text = "Q10";
+            this.btnQ10.UseVisualStyleBackColor = true;
+            this.btnQ10.Click += new System.EventHandler(this.btnQ10_Click);
+            // 
+            // lblAnswers
+            // 
+            this.lblAnswers.Location = new System.Drawing.Point(15, 181);
+            this.lblAnswers.Multiline = true;
+            this.lblAnswers.Name = "lblAnswers";
+            this.lblAnswers.ReadOnly = true;
+            this.lblAnswers.Size = new System.Drawing.Size(819, 144);
+            this.lblAnswers.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -131,6 +144,7 @@
             this.Text = "Form1";
             this.grpQuestions.ResumeLayout(false);
             this.grpAnswers.ResumeLayout(false);
+            this.grpAnswers.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -138,13 +152,14 @@
         #endregion
 
         private System.Windows.Forms.Button btnQ1;
-        private System.Windows.Forms.Label lblAnswers;
         private System.Windows.Forms.GroupBox grpQuestions;
         private System.Windows.Forms.GroupBox grpAnswers;
         private System.Windows.Forms.Label lblQuestions;
         private System.Windows.Forms.Button btnQ2;
         private System.Windows.Forms.Button btnQ3;
         private System.Windows.Forms.Button btnQ4;
+        private System.Windows.Forms.Button btnQ10;
+        private System.Windows.Forms.TextBox lblAnswers;
     }
 }
 

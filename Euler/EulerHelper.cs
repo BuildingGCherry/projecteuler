@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Euler
 {
@@ -6,6 +9,11 @@ namespace Euler
     {
         #region Methods
 
+        /// <summary>
+        /// Get the largest prime number not exceeding the passed in value
+        /// </summary>
+        /// <param name="number">Highest number to check</param>
+        /// <returns>long</returns>
         public long GetLargestPrimeNumber(long number)
         {
             var newNum = number;
@@ -33,6 +41,11 @@ namespace Euler
             return largestFactor;
         }
 
+        /// <summary>
+        /// Returns true if number is a Palindrome and false if it is not
+        /// </summary>
+        /// <param name="number">Number to check</param>
+        /// <returns>bool</returns>
         public bool IsPalindrome(long number)
         {
             var s = number.ToString();
@@ -42,18 +55,69 @@ namespace Euler
 
         }
 
+        /// <summary>
+        /// Returns true if number is a prime number and false if it is not
+        /// </summary>
+        /// <param name="number">Number to check</param>
+        /// <returns>bool</returns>
         public bool IsPrimeNumber(long number)
         {
+            var results = true;
+
+            if (number == 1)
+            {
+                results = false;
+            }
+
             for (var i = 2; i <= (number/2); i++)
             {
                 if (number%i == 0)
                 {
-                    return false;
+                    results = false;
                 }
+                
             }
-            return true;
+
+            return results;
         }
 
+        /// <summary>
+        /// Using the algorithm from https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes get all prime numbers
+        /// below the number passed in
+        /// </summary>
+        /// <param name="maxNumber">Highest number to check</param>
+        /// <returns></returns>
+        public int[] ESievePrimeNumbers(int maxNumber)
+        {
+
+            int sieveBound = (int)(maxNumber - 1) / 2;
+            int upperSqrt = ((int)Math.Sqrt(maxNumber) - 1) / 2;
+
+            BitArray PrimeBits = new BitArray(sieveBound + 1, true);
+
+            for (int i = 1; i <= upperSqrt; i++)
+            {
+                if (PrimeBits.Get(i))
+                {
+                    for (int j = i * 2 * (i + 1); j <= sieveBound; j += 2 * i + 1)
+                    {
+                        PrimeBits.Set(j, false);
+                    }
+                }
+            }
+
+            List<int> numbers = new List<int>((int)(maxNumber / (Math.Log(maxNumber) - 1.08366)));
+            numbers.Add(2);
+            for (int i = 1; i <= sieveBound; i++)
+            {
+                if (PrimeBits.Get(i))
+                {
+                    numbers.Add(2 * i + 1);
+                }
+            }
+
+            return numbers.ToArray();
+        }   
         #endregion
     }
 }

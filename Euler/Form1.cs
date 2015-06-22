@@ -1,6 +1,7 @@
 ﻿#region References
 
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -142,5 +143,44 @@ namespace Euler
         }
 
         #endregion
+        /// <summary>
+        /// Project euler problem 10
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnQ10_Click(object sender, EventArgs e)
+        {
+            var maxNumber = 2000000;
+            
+
+            lblQuestions.Text = "Find the sum of all the primes below " + maxNumber;
+
+            //var results = new List<long>();
+
+            //Int64 test = Enumerable.Range(0, maxNumber).Select(x => x).Where(y => _eulerHelper.IsPrimeNumber(y)).Sum();
+            //lblAnswers.Text = test.ToString();
+
+            //for (int i = 1; i < maxNumber; i++)
+            //{
+            //    if (_eulerHelper.IsPrimeNumber(i))
+            //    {
+            //        results.Add(i);
+            //    }
+            //}
+
+            //lblAnswers.Text = results.Select(x => x).Sum().ToString();
+
+
+            int[] primeNumbers = _eulerHelper.ESievePrimeNumbers(maxNumber);
+
+            decimal primeSum = 0;
+
+            for (int i = 0; i < primeNumbers.Length; i++)
+            {
+                primeSum += primeNumbers[i];
+            }
+
+            lblAnswers.Text = primeSum.ToString();
+        }
     }
 }
