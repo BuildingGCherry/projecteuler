@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Euler;
-using Euler.Interfaces;
-using NUnit.Framework;
-
+﻿using NUnit.Framework;
 
 namespace EulerTest
 {
@@ -13,8 +8,6 @@ namespace EulerTest
         [Test]
         public void TestMethod()
         {
-            
         }
-
     }
 }

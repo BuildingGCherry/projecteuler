@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Euler.Interfaces
+namespace Euler.Logic.Interfaces
 {
     public interface IEulerHelper
     {
         long GetLargestPrimeNumber(long number);
         bool IsPalindrome(long number);
         bool IsPrimeNumber(long number);
-        IEnumerable<Int64> ESievePrimeNumbers(int maxNumber);
+        IEnumerable<long> ESievePrimeNumbers(long maxNumber);
     }
 }
