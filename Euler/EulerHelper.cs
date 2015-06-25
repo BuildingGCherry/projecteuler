@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Euler.Interfaces;
 
 namespace Euler
 {
-    public class EulerHelper
+    public class EulerHelper : IEulerHelper
     {
         #region Methods
 
@@ -87,7 +88,7 @@ namespace Euler
         /// </summary>
         /// <param name="maxNumber">Highest number to check</param>
         /// <returns></returns>
-        public List<Int64> ESievePrimeNumbers(int maxNumber)
+        public IEnumerable<long> ESievePrimeNumbers(int maxNumber)
         {
 
             int sieveBound = (int)(maxNumber - 1) / 2;

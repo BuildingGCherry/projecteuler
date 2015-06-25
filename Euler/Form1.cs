@@ -30,16 +30,16 @@ namespace Euler
         #region Methods
 
         /// <summary>
-        /// Project euler problem 1
+        ///     Project euler problem 1
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnQ1_Click(object sender, EventArgs e)
         {
-            var result = 0;
-            var sum = 0;
+            int result = 0;
+            int sum = 0;
 
-            for (var i = 0; i < 1000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 if (i%3 == 0 && i%5 == 0)
                 {
@@ -62,16 +62,16 @@ namespace Euler
         }
 
         /// <summary>
-        /// Project euler problem 2
+        ///     Project euler problem 2
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnQ2_Click(object sender, EventArgs e)
         {
-            var fibPrevious = 0;
-            var fibCurrent = 1;
-            var fibNext = 0;
-            var totalSum = 0;
+            int fibPrevious = 0;
+            int fibCurrent = 1;
+            int fibNext = 0;
+            int totalSum = 0;
 
             do
             {
@@ -91,13 +91,13 @@ namespace Euler
         }
 
         /// <summary>
-        /// Project euler problem 3
+        ///     Project euler problem 3
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnQ3_Click(object sender, EventArgs e)
         {
-            var maxNumber = 600851475143;
+            long maxNumber = 600851475143;
 
             lblAnswers.Text = _eulerHelper.GetLargestPrimeNumber(maxNumber).ToString();
 
@@ -109,7 +109,7 @@ namespace Euler
         }
 
         /// <summary>
-        /// Project euler problem 4
+        ///     Project euler problem 4
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -120,7 +120,7 @@ namespace Euler
                 "9009 = 91 × 99.Find the largest palindrome made from the product of two 3-digit numbers.";
 
             ///Found that using linq makes this a bit easier
-            var results = Enumerable.Range(100, 900).
+            int results = Enumerable.Range(100, 900).
                 SelectMany(x => Enumerable.Range(x, 1000 - x).Select(y => x*y)).
                 Where(z => _eulerHelper.IsPalindrome(z)).Max();
 
@@ -142,16 +142,15 @@ namespace Euler
             //lblAnswers.Text = results.Select(x => x).Where(y => _eulerHelper.IsPalindrome(y)).Max().ToString();
         }
 
-        #endregion
         /// <summary>
-        /// Project euler problem 10
+        ///     Project euler problem 10
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnQ10_Click(object sender, EventArgs e)
         {
-            var maxNumber = 2000000;
-            
+            int maxNumber = 2000000;
+
 
             lblQuestions.Text = "Find the sum of all the primes below " + maxNumber;
 
@@ -173,7 +172,9 @@ namespace Euler
 
             IEnumerable<Int64> primeNumbers = _eulerHelper.ESievePrimeNumbers(maxNumber);
             lblAnswers.Text = primeNumbers.Select(x => x).Sum().ToString();
-
         }
+        #endregion
+
+       
     }
 }
