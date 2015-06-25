@@ -9,5 +9,7 @@ namespace Euler.Logic.Interfaces
         bool IsPrimeNumber(long number);
         IEnumerable<long> ESievePrimeNumbers(long maxNumber);
         IEnumerable<int> GetPrimeNumbers(int maxNumber);
+        int GreatestCommonDenominator(int num1, int num2);
+        int LowestCommonMultiple(int num1, int num2);
     }
 }

@@ -124,16 +124,25 @@ namespace Euler.Logic.Problems
         /// <returns></returns>
         public int EulerQuestion5(int maxNumber)
         {
-            IEnumerable<int> primes = _eulerHelper.GetPrimeNumbers(maxNumber);
-            int result = 1;
+            //Slower and more complicated way
+            //IEnumerable<int> primes = _eulerHelper.GetPrimeNumbers(maxNumber);
+            //int result = 1;
 
-            foreach (int num in primes)
+            //foreach (int num in primes)
+            //{
+            //    var a = (int) Math.Floor(Math.Log(maxNumber)/Math.Log(num));
+            //    result = result*((int) Math.Pow(num, a));
+            //}
+
+            //Faster and less complicated way
+            int res = 1;
+
+            for (int i = 2; i <= maxNumber; i++)
             {
-                var a = (int) Math.Floor(Math.Log(maxNumber)/Math.Log(num));
-                result = result*((int) Math.Pow(num, a));
+                res = _eulerHelper.LowestCommonMultiple(res, i);
             }
 
-            return result;
+            return res;
         }
     }
 }

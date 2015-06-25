@@ -161,6 +161,36 @@ namespace Euler
             return primes.ToList();
         }
 
+        /// <summary>
+        /// Get the greatest common denominator
+        /// </summary>
+        /// <param name="num1"></param>
+        /// <param name="num2"></param>
+        /// <returns></returns>
+        public int GreatestCommonDenominator(int num1, int num2)
+        {
+            while (num2 != 0)
+            {
+                num1 %= num2;
+                num1 ^= num2;
+                num2 ^= num1;
+                num1 ^= num2;
+            }
+
+            return num1;
+        }
+
+        /// <summary>
+        /// Get the lowest common muitiple
+        /// </summary>
+        /// <param name="num1"></param>
+        /// <param name="num2"></param>
+        /// <returns></returns>
+        public int LowestCommonMultiple(int num1, int num2)
+        {
+            return num1 / GreatestCommonDenominator(num1, num2) * num2;
+        }
+
         #endregion
     }
 }
