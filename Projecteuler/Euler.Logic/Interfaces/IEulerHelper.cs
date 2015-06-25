@@ -8,5 +8,6 @@ namespace Euler.Logic.Interfaces
         bool IsPalindrome(long number);
         bool IsPrimeNumber(long number);
         IEnumerable<long> ESievePrimeNumbers(long maxNumber);
+        IEnumerable<int> GetPrimeNumbers(int maxNumber);
     }
 }

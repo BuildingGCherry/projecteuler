@@ -116,5 +116,24 @@ namespace Euler.Logic.Problems
             IEnumerable<Int64> primeNumbers = _eulerHelper.ESievePrimeNumbers(maxNumber);
             return primeNumbers.Select(x => x).Sum();
         }
+
+        /// <summary>
+        ///     What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+        /// </summary>
+        /// <param name="maxNumber"></param>
+        /// <returns></returns>
+        public int EulerQuestion5(int maxNumber)
+        {
+            IEnumerable<int> primes = _eulerHelper.GetPrimeNumbers(maxNumber);
+            int result = 1;
+
+            foreach (int num in primes)
+            {
+                var a = (int) Math.Floor(Math.Log(maxNumber)/Math.Log(num));
+                result = result*((int) Math.Pow(num, a));
+            }
+
+            return result;
+        }
     }
 }
